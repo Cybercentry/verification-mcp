@@ -47,9 +47,9 @@ The machine-readable contract is at
 
 Neither takes payment and neither needs a wallet.
 
-- `list_services` — the live catalogue with current prices. This is the
+- `list_services`: the live catalogue with current prices. This is the
   authoritative list; the tools below are a snapshot of it.
-- `recent_exploits` — recent real-world exploits with losses, attack vectors and
+- `recent_exploits`: recent real-world exploits with losses, attack vectors and
   the service that addresses each. Takes an optional `limit` (default 10).
 
 If the user's question can be answered from `recent_exploits` or
@@ -72,22 +72,22 @@ The verification runs before settlement, so a call that fails is not charged.
 
 ### Paid tools, $1.00 each
 
-- `wallet_verification` — risk scoring and sanctions screening for an EVM
+- `wallet_verification`: risk scoring and sanctions screening for an EVM
   address across 35 chains. **Asynchronous:** returns `job_id`, `status` and
   `poll_url`. Fetch `poll_url` until `status` is no longer `verifying`. Allow
   up to about two minutes.
-- `base_token_verification` — issuer control and holder-harm checks for a Base
+- `base_token_verification`: issuer control and holder-harm checks for a Base
   token: honeypots, armed freeze authorities, mint and tax controls.
-- `ethereum_token_verification` — the same analysis for EVM token contracts,
+- `ethereum_token_verification`: the same analysis for EVM token contracts,
   including rug-pull and hidden-tax detection.
-- `solidity_code_verification` — vulnerability analysis of Solidity source.
-- `web_application_verification` — OWASP-based scan of a site or dApp frontend.
+- `solidity_code_verification`: vulnerability analysis of Solidity source.
+- `web_application_verification`: OWASP-based scan of a site or dApp frontend.
   **Asynchronous**, as wallet verification is; allow up to about three minutes.
-- `openclaw_ai_agent_verification` — review of an AI agent's configuration.
-- `media_content_verification` — C2PA provenance and authenticity for media.
-- `private_data_verification` — zero-knowledge proofs over private data.
-- `quantum_cryptography_verification` — quantum-resistant encryption.
-- `cyber_security_consultant` — expert advisory and current threat intelligence.
+- `openclaw_ai_agent_verification`: review of an AI agent's configuration.
+- `media_content_verification`: C2PA provenance and authenticity for media.
+- `private_data_verification`: zero-knowledge proofs over private data.
+- `quantum_cryptography_verification`: quantum-resistant encryption.
+- `cyber_security_consultant`: expert advisory and current threat intelligence.
 
 ### Reporting a result
 

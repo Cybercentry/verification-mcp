@@ -3,7 +3,12 @@
   "name": "uk.co.cybercentry/verification",
   "title": "Cybercentry Verification",
   "description": "Pay-per-call security verification for wallets, contracts, agents and apps, in USDC over x402.",
-  "version": "1.0.1",
+  "repository": {
+    "url": "https://github.com/Cybercentry/verification-mcp",
+    "source": "github",
+    "id": "1337017699"
+  },
+  "version": "1.0.2",
   "websiteUrl": "https://centry.cybercentry.co.uk",
   "remotes": [
     {

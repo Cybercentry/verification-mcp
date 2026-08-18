@@ -72,22 +72,31 @@ The verification runs before settlement, so a call that fails is not charged.
 
 ### Paid tools, $1.00 each
 
-- `wallet_verification`: risk scoring and sanctions screening for an EVM
-  address across 35 chains. **Asynchronous:** returns `job_id`, `status` and
+- `wallet_verification`: is this wallet sanctioned or risky? OFAC SDN screening
+  and suspicious-activity detection across 35 EVM chains. **Asynchronous:** returns `job_id`, `status` and
   `poll_url`. Fetch `poll_url` until `status` is no longer `verifying`. Allow
   up to about two minutes.
-- `base_token_verification`: issuer control and holder-harm checks for a Base
-  token: honeypots, armed freeze authorities, mint and tax controls.
-- `ethereum_token_verification`: the same analysis for EVM token contracts,
-  including rug-pull and hidden-tax detection.
-- `solidity_code_verification`: vulnerability analysis of Solidity source.
-- `web_application_verification`: OWASP-based scan of a site or dApp frontend.
+- `base_token_verification`: is this Base token a honeypot, or can you sell it
+  again? Honeypots, armed freeze-and-seize, live pause, ticker copycats, with
+  issuer controls disclosed separately.
+- `ethereum_token_verification`: is this token a rug pull? Rug-pull indicators,
+  hidden transfer taxes, fake liquidity and holder concentration on any EVM
+  token contract.
+- `solidity_code_verification`: is this Solidity safe to deploy or call? Static
+  analysis of the source with an overall risk level.
+- `web_application_verification`: is this site safe to connect a wallet to? An
+  OWASP-based scan of a website or dApp frontend.
   **Asynchronous**, as wallet verification is; allow up to about three minutes.
-- `openclaw_ai_agent_verification`: review of an AI agent's configuration.
-- `media_content_verification`: C2PA provenance and authenticity for media.
-- `private_data_verification`: zero-knowledge proofs over private data.
-- `quantum_cryptography_verification`: quantum-resistant encryption.
-- `cyber_security_consultant`: expert advisory and current threat intelligence.
+- `openclaw_ai_agent_verification`: is this agent safe to give tools to? Audits
+  its config for prompt-injection exposure, auth gaps and broad permissions.
+- `media_content_verification`: is this image real, AI-generated or tampered
+  with? C2PA content credentials, provenance and a malware scan.
+- `private_data_verification`: prove something is true without revealing the
+  data. Returns a zero-knowledge proof ID and URL.
+- `quantum_cryptography_verification`: will this secret survive quantum
+  computers? Post-quantum encryption with a record ID and decrypt URL.
+- `cyber_security_consultant`: ask any security question and get an expert
+  answer backed by real-time threat intelligence.
 
 ### Reporting a result
 

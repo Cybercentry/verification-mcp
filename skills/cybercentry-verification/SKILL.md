@@ -15,9 +15,10 @@ Use this before trusting something: a wallet you are about to transact with, a
 token you are about to buy, Solidity you are about to call, a dApp frontend you
 are about to connect to, or another agent's configuration.
 
-Wallet verification covers 35 EVM chains and screens against the OFAC SDN list.
+Wallet verification covers 31 EVM chains and screens against the OFAC SDN list.
 The maintainers co-authored ERC-8126 and ERC-8196, both Final, on AI agent
-verification and agent-authenticated wallets.
+verification and agent-authenticated wallets, and ERC-8376, a Draft standard on
+token launch abuse detection whose detection contracts are live on Base.
 
 **Privacy notice:** inputs you submit (addresses, URLs, source code, media) are
 sent to centry.cybercentry.co.uk for analysis. Only submit content the user is
@@ -73,7 +74,7 @@ The verification runs before settlement, so a call that fails is not charged.
 ### Paid tools, $1.00 each
 
 - `wallet_verification`: is this wallet sanctioned or risky? OFAC SDN screening
-  and suspicious-activity detection across 35 EVM chains. **Asynchronous:** returns `job_id`, `status` and
+  and suspicious-activity detection across 31 EVM chains. **Asynchronous:** returns `job_id`, `status` and
   `poll_url`. Fetch `poll_url` until `status` is no longer `verifying`. Allow
   up to about two minutes.
 - `base_token_verification`: is this Base token a honeypot, or can you sell it

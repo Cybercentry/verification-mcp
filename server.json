@@ -2,13 +2,13 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "uk.co.cybercentry/verification",
   "title": "Cybercentry Verification",
-  "description": "Pay-per-call security verification for wallets, contracts, agents and apps, in USDC over x402.",
+  "description": "Twelve tools: token, wallet, contract and site security. Two free, the rest $1 in USDC over x402.",
   "repository": {
     "url": "https://github.com/Cybercentry/verification-mcp",
     "source": "github",
     "id": "1337017699"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "websiteUrl": "https://centry.cybercentry.co.uk",
   "remotes": [
     {

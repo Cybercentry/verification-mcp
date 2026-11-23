@@ -8,12 +8,20 @@
     "source": "github",
     "id": "1337017699"
   },
-  "version": "1.0.4",
+  "version": "1.0.5",
   "websiteUrl": "https://centry.cybercentry.co.uk",
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://centry.cybercentry.co.uk/api/mcp"
+      "url": "https://centry.cybercentry.co.uk/api/mcp",
+      "headers": [
+        {
+          "name": "X-Subscription-Token",
+          "description": "Optional Cybercentry subscription token: spends your plan quota instead of paying per call. Omit it for the two free tools, or to pay per call over x402.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
     }
   ],
   "icons": [

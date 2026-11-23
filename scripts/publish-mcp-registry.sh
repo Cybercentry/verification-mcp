@@ -48,7 +48,12 @@ WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
 echo "== resolving the latest release =="
-TAG="$(curl -fsSL "https://api.github.com/repos/${REPO}/releases/latest" | grep -m1 '"tag_name"' | cut -d'"' -f4)"
+# Written to a file first, not piped: grep -m1 closes the pipe on its
+# first match, curl then exits 23, and pipefail turns that into a failed
+# run that looks like a network fault.
+curl -fsSL -o "${WORK}/latest.json" "https://api.github.com/repos/${REPO}/releases/latest"
+TAG="$(grep '"tag_name"' "${WORK}/latest.json" | head -1 | cut -d'"' -f4)"
+[ -n "$TAG" ] || { echo "could not resolve the latest release tag" >&2; exit 1; }
 VER="${TAG#v}"
 echo "   ${TAG}, asset ${ASSET}"
 
